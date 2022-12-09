@@ -1,10 +1,10 @@
 from itertools import permutations
 
 vowels = ["а"]
-consonants = ["б", "т", "с"]
+consonants = ["б", "р", "х", "т", "к"]
 result = set()
 
-for index, i in enumerate(permutations("аббатиса")):
+for index, i in enumerate(permutations("бархатка")):
     correct = True
     for symbol_index in range(0, len(i) - 1):
         if (i[symbol_index] in vowels and i[symbol_index + 1] in vowels) or \

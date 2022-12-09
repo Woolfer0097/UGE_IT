@@ -2,18 +2,16 @@ from itertools import permutations
 
 vowels = ["о", "а"]
 consonants = ["в", "т", "р"]
-count = 0
+result = set()
 
 for index, i in enumerate(permutations("авторота")):
-    temp = ""
     correct = True
-    for symbol_index in range(len(i)):
-        if (temp in vowels and i[symbol_index + 1] in vowels) or \
-                (temp in consonants and i[symbol_index + 1] in consonants):
+    for symbol_index in range(0, len(i) - 1):
+        if (i[symbol_index] in vowels and i[symbol_index + 1] in vowels) or \
+                (i[symbol_index] in consonants and i[symbol_index + 1] in consonants):
             correct = False
-        else:
-            temp += i[symbol_index]
+            break
     if correct:
-        count += 1
+        result.add(i)
 
-print(count)
+print(len(result))

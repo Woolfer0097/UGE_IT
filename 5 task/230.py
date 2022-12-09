@@ -3,7 +3,7 @@ rangement = range(150, 200)
 count = 0
 for n in range(2, 100):
     result = ""
-    number = bin(n).replace("0b", "")
+    number = bin(n)[2:]
     result += number
     result += number[-2]
     result += number[1]

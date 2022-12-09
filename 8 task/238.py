@@ -1,18 +1,17 @@
 from itertools import permutations
 
-vowels = ["е", "о"]
-consonants = ["в", "р", "т", "н"]
-count = 0
-for i in permutations("веретено"):
-    temp = ""
-    correct = True
-    for symbol_index in range(len(i)):
-        if (temp in vowels and i[symbol_index + 1] in vowels) or \
-                (temp in consonants and i[symbol_index + 1] in consonants):
-            correct = False
-        else:
-            temp += i[symbol_index]
-    if correct:
-        count += 1
+vowels = ["о", "е"]
+consonants = ["в", "т", "р", "н"]
+result = set()
 
-print(count)
+for index, i in enumerate(permutations("веретено")):
+    correct = True
+    for symbol_index in range(0, len(i) - 1):
+        if (i[symbol_index] in vowels and i[symbol_index + 1] in vowels) or \
+                (i[symbol_index] in consonants and i[symbol_index + 1] in consonants):
+            correct = False
+            break
+    if correct:
+        result.add(i)
+
+print(len(result))
