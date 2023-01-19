@@ -9,9 +9,9 @@ def transfer_10_to_x(number, base):
     return result[::-1]
 
 
-expression = 4 ** 1024 + 8 ** 1025 - 2 ** 1026 - 140
-res_base = 2
-count_number = 0
+expression = 4*25**2022-2*5**2000+125**1011-3*5**100-660
+res_base = 5
+count_number = 4
 print(transfer_10_to_x(expression, res_base))
 # print(sum(transfer_10_to_x(expression, res_base)))  # Сумма цифр
 print(transfer_10_to_x(expression, res_base).count(count_number))  # Подсчёт заданного числа
