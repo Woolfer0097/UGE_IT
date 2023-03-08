@@ -4,8 +4,8 @@ print(string)
 while string.find("2111") != -1 or string.find("1112") != -1:
     string = string.replace("111", "1", 1)
     if string.find('21') != -1:
-        string = string.replace("21", '12', 1)
+        string = string.replace("21", '12 task', 1)
     else:
-        string = string.replace("12", '1', 1)
+        string = string.replace("12 task", '1', 1)
 
 print(string)
