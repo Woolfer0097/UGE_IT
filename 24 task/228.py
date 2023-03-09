@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 with open("24data/24-228.txt", "r") as f:
     string = f.readline()
 
@@ -10,12 +13,6 @@ while string.find("XX"):
 
     string = string[index1+14:]
 
-res1 = 1
-res2 = 0
-for i in str(max(res)):
-    if int(i) % 2 != 0:
-        res2 += int(i)
-    else:
-        res1 *= int(i)
-
-print(res1 + res2)
+res_n = max(res)
+print(sum([i for i in list(map(int, list(str(res_n)))) if i % 2 != 0]) +
+      reduce(lambda acc, x: acc * x, filter(lambda x: x % 2 == 0, map(int, list(str(res_n))))))

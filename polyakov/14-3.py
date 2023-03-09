@@ -6,7 +6,7 @@ def t(n):
 
 
 res = []
-for a in range(1, 100):
+for a in range(1, 55):
     n1 = t([35, a, 34, 33])
     n2 = t([2, 33, a, 34])
     if (n1 - n2) % 29 == 0:
